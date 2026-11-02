@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<!--
+  RECONSTRUCTED "BEFORE" VERSION, kept only as test evidence. DO NOT DEPLOY.
+  Rebuilt from the original report's "Before" snippet (innerHTML) plus the original markup
+  (CDN Tailwind, inline onclick handler, no CSP, no input limit).
+-->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Task Manager (VULNERABLE - evidence only)</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body>
+    <input type="text" id="taskInput">
+    <button onclick="addTask()">Add Task</button>
+    <ul id="taskList"></ul>
+    <script>
+        function addTask() {
+            const input = document.getElementById('taskInput');
+            const taskText = input.value.trim();
+            if (!taskText) return;
+            const li = document.createElement('li');
+            li.innerHTML = `<span>${taskText}</span>`;   // VULNERABLE: unsanitized HTML sink
+            document.getElementById('taskList').appendChild(li);
+            input.value = '';
+        }
+    </script>
+</body>
+</html>

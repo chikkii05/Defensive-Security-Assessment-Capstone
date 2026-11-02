@@ -1,0 +1,18 @@
+$ curl -si http://127.0.0.1:3000/ | head
+HTTP/1.1 200 OK
+Content-Security-Policy: default-src 'none'; script-src 'self'; style-src 'self'; img-src 'self'; connect-src 'self'; base-uri 'none'; form-action 'none'; frame-ancestors 'none'
+X-Content-Type-Options: nosniff
+X-Frame-Options: DENY
+Referrer-Policy: no-referrer
+Cross-Origin-Opener-Policy: same-origin
+Cache-Control: no-store
+Accept-Ranges: bytes
+Last-Modified: Mon, 02 Nov 2026 07:16:58 GMT
+ETag: W/"716-1a19b1e5408"
+Content-Type: text/html; charset=UTF-8
+Content-Length: 1814
+
+$ GET /package.json -> 404
+$ GET /server.js -> 404
+$ GET /.env -> 404
+$ GET /..%2fpackage.json -> 404

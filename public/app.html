@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self'; img-src 'self'; connect-src 'self'; base-uri 'none'; form-action 'none'; frame-ancestors 'none'">
+    <title>Secure Task Manager - Capstone Demo</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="bg-gray-50 min-h-screen p-6">
+    <div class="max-w-xl mx-auto bg-white rounded-xl shadow-md overflow-hidden p-6">
+        <h1 class="text-2xl font-bold text-gray-800 mb-2">Secure Task Manager</h1>
+        <p class="text-sm text-gray-500 mb-6">Defensive Security Assessment Capstone Demo App</p>
+
+        <!-- Task Input Form -->
+        <div class="mb-4">
+            <label for="taskInput" class="block text-sm font-medium text-gray-700 mb-1">New Task</label>
+            <div class="flex gap-2">
+                <input type="text" id="taskInput" maxlength="200" placeholder="Enter task description..."
+                    class="flex-1 border border-gray-300 rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500">
+                <button type="button" id="addTaskBtn" class="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition">Add Task</button>
+            </div>
+        </div>
+
+        <!-- Task List -->
+        <div class="mt-6">
+            <h2 class="text-lg font-semibold text-gray-700 mb-3">Task List</h2>
+            <ul id="taskList" class="divide-y divide-gray-200 border border-gray-200 rounded-lg p-2">
+                <li class="py-2 px-3 text-gray-600 text-sm">Sample task item</li>
+            </ul>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
